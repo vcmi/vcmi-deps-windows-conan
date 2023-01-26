@@ -8,17 +8,17 @@ For generating:
 
 - Install packages:
 
-`sudo apt install mingw-w64 python3-pip`
+`sudo apt install mingw-w64 python3-pip git build-essential gcc nsis`
 
 - Install selected packages from Ubuntu 22.*10*
 
 `wget -c http://mirrors.kernel.org/ubuntu/pool/universe/m/mingw-w64/mingw-w64-common_10.0.0-2_all.deb && dpkg -i /mingw-w64-common_10.0.0-2_all.deb`
 
-`wget -c http://mirrors.kernel.org/ubuntu/pool/universe/m/mingw-w64/mingw-w64-i686-dev_10.0.0-2_all.deb && dpkg -i mingw-w64-i686-dev_10.0.0-2_all.deb`
+`wget -c http://mirrors.kernel.org/ubuntu/pool/universe/m/mingw-w64/mingw-w64-x86-64-dev_10.0.0-2_all.deb && dpkg -i mingw-w64-x86-64-dev_10.0.0-2_all.deb`
 
 - Install conan
 
-`pip install conan`
+`pip3 install conan`
 
 - If necessary, clone vcmi repository
 
@@ -28,7 +28,7 @@ For generating:
 
 - Run conan:
 
-`conan install . --install-folder=conan-generated --no-imports --build=missing --profile:build=default --profile:host=CI/conan/mingw-linux`
+`conan install . --install-folder=conan-generated --no-imports --build=missing --profile:build=default --profile:host=CI/conan/mingw64-linux.jinja`
 (this will take a while)
 
 - Remove temporary files that we won't need: 
